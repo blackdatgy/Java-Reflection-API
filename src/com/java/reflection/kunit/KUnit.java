@@ -11,9 +11,9 @@ import java.util.*;
 
 public class KUnit {
   private static List<String> checks;
-  private static int checksMade = 0;
-  private static int passedChecks = 0;
-  private static int failedChecks = 0;
+  private static double checksMade = 0.0d;
+  private static double passedChecks = 0.0d;
+  private static double failedChecks = 0.0d;
 
   /******************************************************************************
    * A report is formed from a list of strings. This method adds a message to the
@@ -26,7 +26,7 @@ public class KUnit {
     if (checks == null) {
       checks = new LinkedList<String>();
     }
-    checks.add(String.format("%04d: %s", checksMade++, txt));
+    checks.add(String.format("%04f: %s", checksMade++, txt));
   }
 
   /******************************************************************************
@@ -36,12 +36,12 @@ public class KUnit {
    * @author Dr Kevan Buckley, University of Wolverhampton, 2019
    ******************************************************************************/
   
-  public static void checkEquals(int value1, int value2) {
+  public static void checkEquals(double value1, double value2) {
     if (value1 == value2) {
-      addToReport(String.format("  %d == %d", value1, value2));
+      addToReport(String.format("  %f == %f", value1, value2));
       passedChecks++;
     } else {
-      addToReport(String.format("* %d == %d", value1, value2));
+      addToReport(String.format("* %f == %f", value1, value2));
       failedChecks++;
     }
   }
@@ -53,12 +53,12 @@ public class KUnit {
    * @author Dr Kevan Buckley, University of Wolverhampton, 2019
    ******************************************************************************/
 
-  public static void checkNotEquals(int value1, int value2) {
+  public static void checkNotEquals(double value1, double value2) {
     if (value1 != value2) {
-      addToReport(String.format("  %d != %d", value1, value2));
+      addToReport(String.format("  %f != %f", value1, value2));
       passedChecks++;
     } else {
-      addToReport(String.format("* %d != %d", value1, value2));
+      addToReport(String.format("* %f != %f", value1, value2));
       failedChecks++;
     }
   }
@@ -70,8 +70,8 @@ public class KUnit {
    ******************************************************************************/
 
   public static void report() {
-    System.out.printf("%d checks passed\n", passedChecks);
-    System.out.printf("%d checks failed\n", failedChecks);
+    System.out.printf("%f checks passed\n", passedChecks);
+    System.out.printf("%f checks failed\n", failedChecks);
     System.out.println();
     
     for (String check : checks) {

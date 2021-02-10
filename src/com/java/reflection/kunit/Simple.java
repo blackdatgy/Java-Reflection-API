@@ -2,13 +2,13 @@ package com.java.reflection.kunit;
 
 public class Simple {
 
-  public int a = 10;
-  private int b = 20;
+  public double a = 10.0d;
+  private double b = 20.0d;
   
   public Simple() {
   }
   
-  public Simple(int a, int b) {
+  public Simple(double a, double b) {
     this.a = a;
     this.b = b;
   }
@@ -21,24 +21,24 @@ public class Simple {
     this.b *= this.b;
   }
 
-  public int getA() {
+  public double getA() {
     return a;
   }
 
-  private void setA(int a) {
+  private void setA(double a) {
     this.a = a;
   }
 
-  public int getB() {
+  public double getB() {
     return b;
   }
 
-  public void setB(int b) {
+  public void setB(double b) {
     this.b = b;
   }
   
   public String toString() {
-    return String.format("(a:%d, b:%d)", a, b);
+    return String.format("(a:%f, b:%f)", a, b);
   }
 
 }

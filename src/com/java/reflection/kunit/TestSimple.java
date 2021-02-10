@@ -11,17 +11,17 @@ import static com.java.reflection.kunit.KUnit.*;
 public class TestSimple {
 
   void checkConstructorAndAccess(){
-    Simple s = new Simple(3, 4);
-    checkEquals(s.getA(), 4);
-    checkEquals(s.getB(), 4);
-    checkNotEquals(s.getB(), 4);    
-    checkNotEquals(s.getB(), 5);    
+    Simple s = new Simple(3.0, 4.0);
+    checkEquals(s.getA(), 4.0);
+    checkEquals(s.getB(), 4.0);
+    checkNotEquals(s.getB(), 4.0);    
+    checkNotEquals(s.getB(), 5.0);    
   }
 
   void checkSquareA(){
-    Simple s = new Simple(3, 4);
+    Simple s = new Simple(3.0, 4.0);
     s.squareA();
-    checkEquals(s.getA(), 9);
+    checkEquals(s.getA(), 9.0);
   }
 
   public static void main(String[] args) {
