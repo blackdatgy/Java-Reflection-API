@@ -2,8 +2,8 @@ package com.java.reflection.kunit;
 
 public class Simple {
 
-  public double a = 10.0d;
-  private double b = 20.0d;
+  public double a = 20.0d;
+  private double b = 40.0d;
   
   public Simple() {
   }
